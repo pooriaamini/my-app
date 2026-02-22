@@ -10,7 +10,7 @@ export default function Header() {
 
   return (
     <div className="flex justify-between items-center px-7 mt-8">
-      <p className="font-mono hidden md:block text-4xl">Iran/Esfahan</p>
+      <p className="font-mono hidden md:block text-xs">Iran/Esfahan</p>
       <Navigation />
       <p className="font-sans hidden md:block">{timeFormat}</p>
     </div>
