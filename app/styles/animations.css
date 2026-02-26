@@ -1,0 +1,45 @@
+.gradient-hover-btn {
+  background-image: linear-gradient(
+    131deg,
+    #049ee24d 0%,
+    #049ee24d 50%,
+    transparent 50.1%,
+    transparent 100%
+  );
+  background-size: 300% 100%;
+  background-position: 100%;
+  border: 1px solid #045b9c;
+  color: #045b9c;
+  transition: all 0.4s ease;
+}
+
+.gradient-hover-btn:hover {
+  background-position: 0%;
+  color: white;
+  background-color: #049ee2;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px 3px #045b9c;
+}
+
+/* نسخه دارک مود */
+ .dark .gradient-hover-btn {
+  background-image: linear-gradient(
+    131deg,
+    #82f1fc4d 0%,
+    #82f1fc4d 50%,
+    transparent 50.1%,
+    transparent 100%
+  );
+  background-size: 300% 100%;
+  background-position: 100%;
+  border: 1px solid #82f1fc;
+  color: #82f1fc;
+}
+
+.dark .gradient-hover-btn:hover {
+  background-position: 0%;
+  color: black;
+  background-color: #82f1fc;
+  box-shadow: 0 0 20px 3px #82f1fc;
+  transform: scale(1.05);
+ } 

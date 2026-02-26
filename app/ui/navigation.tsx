@@ -20,9 +20,9 @@ export default function Navigation() {
   const pathname = usePathname();
   
   return (
-    <div className="flex justify-between items-center fixed bottom-6 left-1/2 -translate-x-1/2 text-text-primary md:static md:translate-x-0 bg-bg-primary shadow-xs shadow-bg-primary border border-color rounded-s-full rounded-e-full min-w-55 md:min-w-115 px-1 py-2">
+    <div className="flex justify-between     items-center  fixed bottom-6 left-1/2 -translate-x-1/2 text-text-primary md:static md:translate-x-0 bg-bg-primary shadow-xs shadow-bg-primary border border-color rounded-s-full rounded-e-full min-w-55 md:min-w-115 px-1 py-2">
       {/* Home with separator */}
-      <div className="flex gap-2 items-center justify-center ">
+      <div className="flex   gap-2 items-center justify-center ">
         <Link
           className={`p-2 rounded-full ${pathname === "/" ? "bg-[#95959526]" : ""}`}
           href="/"

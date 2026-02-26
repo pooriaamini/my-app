@@ -1,97 +1,55 @@
 @import "tailwindcss";
+@import "./styles/animations.css";
+@import "./styles/scrollbar.css";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* ========== تعریف متغیرهای رنگ - حالت روشن (Light Mode) ========== */
+/* ========== متغیرهای رنگ - حالت روشن ========== */
 :root {
-  /* رنگ اصلی متن (عنوان‌ها، متن‌های مهم) */
+  /* رنگ‌های متن */
   --text-primary: black;
-
-  /* رنگ دوم متن (متن‌های معمولی، توضیحات) */
   --text-secondary: #757575;
-
-  /* رنگ لینک‌ها */
   --text-link: #045b9c;
-
-  /* رنگ لینک‌ها هنگام هاور */
   --text-link-hover: black;
 
-  /* رنگ پس‌زمینه اصلی */
-  --bg-primary: white;
-
-  /* رنگ پس‌زمینه دوم (برای کارت‌ها، منوها و ...) */
-  /* --bg-secondary: ;
-   */
-  /* رنگ هاور (برای دکمه‌ها، لینک‌ها و ...) */
-  --bg-hover: #9595954d ;
-
-  /* رنگ حاشیه‌ها و خطوط جداکننده */
-  --border-color: #95959526;
-
-  /* رنگ‌های اختصاصی برای اسکرول */
-  --scrollbar-track: #f1f1f1;
-  --scrollbar-thumb: #888;
-  --scrollbar-thumb-hover: #555;
-}
-
-/* ========== تعریف متغیرهای رنگ - حالت تاریک (Dark Mode) ========== */
-.dark {
-  /* رنگ اصلی متن */
-  --text-primary: white;
-
-  /* رنگ دوم متن */
-  --text-secondary: #b2b2b2;
-
-  /* رنگ لینک‌ها */
-  --text-link: #82f1fc;
-
-  /* رنگ لینک‌ها هنگام هاور */
-  --text-link-hover: white;
-
-  /* رنگ پس‌زمینه اصلی */
-  --bg-primary: black;
-
-  /* رنگ پس‌زمینه دوم */
-  /* --bg-secondary: ; */
-
-  /* رنگ هاور */
-  --bg-hover:#9595954d ;
-
-  /* رنگ حاشیه‌ها */
-  --border-color: #9595954d;
-
-  /* رنگ‌های اختصاصی برای اسکرول - حالت تاریک */
-  --scrollbar-track: #f1f1f1;
-  --scrollbar-thumb: #888;
-  --scrollbar-thumb-hover: #555;
-}
-
-/* ========== تعریف کلاس‌های کاربردی با @theme inline ========== */
-@theme inline {
-  /* رنگ‌های متن */
-  --color-text-primary: var(--text-primary);
-  --color-text-secondary: var(--text-secondary);
-  --color-text-link: var(--text-link);
-  --color-text-link-hover: var(--text-link-hover);
-
   /* رنگ‌های پس‌زمینه */
-  --color-bg-primary: var(--bg-primary);
-  /* --color-bg-secondary: var(--bg-secondary);
-  --color-bg-hover: var(--bg-hover); */
+  --bg-primary: white;
+  --bg-hover: #9595954d;
 
-  /* رنگ حاشیه */
-  --color-border: var(--border-color);
+  /* رنگ حاشیه و سایه */
+  --border-color: #95959526;
+  --box-shadow: #045b9c;
+  --header-glow: #049ee226;
 
-  /* فونت‌ها */
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* رنگ‌های اسکرول */
+  --scrollbar-track: #f1f1f1;
+  --scrollbar-thumb: #888;
+  --scrollbar-thumb-hover: #555;
 }
 
-/* ========== استایل‌های پایه ========== */
+/* ========== متغیرهای رنگ - حالت تاریک ========== */
+.dark {
+  --text-primary: white;
+  --text-secondary: #b2b2b2;
+  --text-link: #82f1fc;
+  --text-link-hover: white;
+  --bg-primary: black;
+  --bg-hover: #9595954d;
+  --border-color: #9595954d;
+  --box-shadow: #82f1fc;
+  --scrollbar-track: #333;
+  --scrollbar-thumb: #666;
+  --scrollbar-thumb-hover: #999;
+  --header-glow: rgba(59, 130, 246, 0.35);
+}
+
 @layer base {
-  /* استایل بدنه اصلی */
   body {
     background-color: var(--bg-primary);
+    background-image: radial-gradient(
+      circle at 50% 0%,
+      var(--header-glow),
+      transparent 20%);
     color: var(--text-primary);
     font-family: Arial, Helvetica, sans-serif;
     transition:
@@ -99,20 +57,11 @@
       color 0.3s ease;
   }
 
-  /* استایل لینک‌ها */
-
-
-  /* استایل برای متن‌های ثانویه */
+  
   .text-secondary {
     color: var(--text-secondary);
   }
 
-  /* استایل برای کارت‌ها و کانتینرهای ثانویه */
-  .bg-secondary {
-    background-color: var(--bg-secondary);
-  }
-
-  /* استایل برای المان‌های هاوردار */
   .hover-bg {
     transition: background-color 0.2s ease;
   }
@@ -121,27 +70,11 @@
     background-color: var(--bg-hover);
   }
 
-  /* استایل برای حاشیه‌ها */
   .border-color {
     border-color: var(--border-color);
   }
-}
 
-/* ========== استایل اسکرول بار ========== */
-/* Webkit browsers (Chrome, Safari, Edge) */
-::-webkit-scrollbar-track {
-  background: var(--scrollbar-track);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--scrollbar-thumb);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--scrollbar-thumb-hover);
-}
-
-/* Firefox */
-html {
-  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+  .box-shadoww {
+    box-shadow: 0 0 50px 5px var(--box-shadow);
+  }
 }
