@@ -8,7 +8,7 @@ export default function Header() {
   const timeFormat = `${weekDay} / ${day} ${month}`;
 
   return (
-    <div className="  flex   justify-between items-center  px-7 mt-5">
+    <div className="  flex    justify-between items-center  px-7 mt-5 sticky top-3">
       <p className="font-mono hidden md:block text-xs">Iran/Esfahan</p>
       <Navigation />
       <p className="font-sans hidden md:block">{timeFormat}</p>

@@ -15,9 +15,9 @@ export function ThemeToggle() {
 
   if (!mounted) {
   return (
-      <div className="flex dark:bg-red-600 gap-2 items-center">
-        <p className="h-6 w-[.5px] bg-[#9595954d]" />
-        <div className="bg-gray-200 p-2 rounded-full w-7.5 h-7.5" />
+      <div className="flex  gap-2 items-center">
+        <p className="h-6 w-[.5px] bg-[#9595954d] " />
+        <div className="bg-gray-200 dark:bg-[#95959526] p-2 rounded-full w-7.5 h-7.5" />
       </div>
     );  }
 

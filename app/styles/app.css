@@ -1,3 +1,10 @@
+.circle-gradient{
+   background-image: radial-gradient(
+      circle at 50% 0%,
+      var(--header-glow),
+      transparent 20%);
+}
+
 .gradient-hover-btn {
   background-image: linear-gradient(
     131deg,
@@ -22,7 +29,7 @@
 }
 
 /* نسخه دارک مود */
- .dark .gradient-hover-btn {
+.dark .gradient-hover-btn {
   background-image: linear-gradient(
     131deg,
     #82f1fc4d 0%,
@@ -42,4 +49,24 @@
   background-color: #82f1fc;
   box-shadow: 0 0 20px 3px #82f1fc;
   transform: scale(1.05);
- } 
+}
+
+.about-btn {
+  &:hover {
+    .arrow {
+      opacity: 1;
+      visibility: visible;
+      transition: all 0.5s ease;
+    }
+    .link {
+      padding-right: 10px;
+      background-color: #95959526;
+      transform: scale(1.02);
+    }
+  }
+  .arrow {
+    opacity: 0;
+    visibility: hidden;
+  }
+ 
+}

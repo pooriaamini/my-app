@@ -18,9 +18,9 @@ const links = [
 
 export default function Navigation() {
   const pathname = usePathname();
-  
+
   return (
-    <div className="flex justify-between     items-center  fixed bottom-6 left-1/2 -translate-x-1/2 text-text-primary md:static md:translate-x-0 bg-bg-primary shadow-xs shadow-bg-primary border border-color rounded-s-full rounded-e-full min-w-55 md:min-w-115 px-1 py-2">
+    <div className="flex justify-between   items-center  fixed bottom-6  left-1/2 -translate-x-1/2 text-text-primary md:static md:translate-x-0 bg-primary shadow-xs bg-white dark:bg-black shadow-bg-secondry border border-color rounded-s-full rounded-e-full min-w-55 md:min-w-115 px-1 py-2">
       {/* Home with separator */}
       <div className="flex   gap-2 items-center justify-center ">
         <Link
@@ -39,10 +39,11 @@ export default function Navigation() {
           <Link
             href={item.href}
             key={index}
-            className={`flex items-center gap-2 hover:bg-[#9595954d] transition-all duration-100 px-2 p-2 md:py-1.5 rounded-full ${
+            className={`flex  items-center gap-2 hover:bg-[#9595954d] transition-all duration-100 px-2 p-2 md:py-1.5 rounded-full ${
               pathname === item.href ? "bg-[#95959526]" : ""
-            }`}> 
-            <Icon className="text-text-primary w-3.5 h-3.5"/>
+            }`}
+          >
+            <Icon className="text-text-primary w-3.5 h-3.5" />
             <p className="hidden md:block font-mono text-[14px]">{item.name}</p>
           </Link>
         );
